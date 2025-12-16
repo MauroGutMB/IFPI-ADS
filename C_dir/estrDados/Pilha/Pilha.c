@@ -5,6 +5,56 @@
 
 typedef struct pilha {
   int vals[N];
-  int contador;
-  int inicio;
+  int c;
 } Pilha;
+
+/*
+ * Retorna uma nova pilha
+ * */
+Pilha* pilha_cria(){
+  Pilha* p = (Pilha*) malloc(sizeof(Pilha));
+  p->c = 0;
+
+  return p;
+}
+
+/*
+ * Verifica se a pilha está vazia
+ * \1: true
+ * \0: false
+ * */
+int pilha_vazia(Pilha* p){
+  if(p == NULL || p->c == 0)return 1; return 0;
+}
+
+/*
+ * Adiciona um elemento na pilha: int
+ * */
+void pilha_add(Pilha* p, int v){
+  if(pilha_vazia(p) || p->c == 100)return; // estouro de Pilha
+  p->vals[p->c] = v;
+  p->c++;
+}
+
+/*
+ * Remove um elemento da pilha: int
+ * */
+int pilha_remove(Pilha* p){
+  p->c--;
+  return p->vals[p->c+1];
+}
+
+/*
+ * Busca um valor na pilha
+ * \1: elemento na pilha
+ * \0: elemento não presente
+ * */
+int pilha_busca(Pilha* p, int v){
+  if(pilha_vazia(p))return 0;
+  for(int i = 0; i < p->c; i++){
+    if(v == p->vals[i]){
+      return 1;
+    }
+  }
+  return 0;
+}
