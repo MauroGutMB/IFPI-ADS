@@ -3,6 +3,10 @@
 #include "Pilha.h"
 #define N 100
 
+/*
+ * \int Vals[100]
+ * \int c
+ * */
 typedef struct pilha {
   int vals[N];
   int c;
@@ -31,7 +35,10 @@ int pilha_vazia(Pilha* p){
  * Adiciona um elemento na pilha: int
  * */
 void pilha_add(Pilha* p, int v){
-  if(pilha_vazia(p) || p->c == 100)return; // estouro de Pilha
+  if(p == NULL || p->c == 100){
+    printf("Estouro de pilha.\n");
+    return;
+  }
   p->vals[p->c] = v;
   p->c++;
 }
@@ -57,4 +64,20 @@ int pilha_busca(Pilha* p, int v){
     }
   }
   return 0;
+}
+
+/*
+ * Libera a pilha
+ * */
+void pilha_libera(Pilha* p){
+  free(p);
+}
+
+/*
+ * Imprime todos os elementos da Pilha
+ * */
+void pilha_imprime(Pilha* p){
+  for(int i = p->c-1; i >= 0; i--){
+    printf("%i\n", p->vals[i]);
+  }
 }

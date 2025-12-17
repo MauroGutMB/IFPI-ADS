@@ -4,3 +4,5 @@ int pilha_vazia(Pilha* p);
 void pilha_add(Pilha* p, int v);
 int pilha_remove(Pilha* p);
 int pilha_busca(Pilha* p, int v);
+void pilha_libera(Pilha* p);
+void pilha_imprime(Pilha* p);
