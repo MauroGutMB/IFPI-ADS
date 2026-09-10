@@ -1,6 +1,6 @@
 import 'dart:io';
 
-void main(List<String> arguments) {
+void main() {
   print("Números: ");
   int a = int.parse(stdin.readLineSync()!);
   int b = int.parse(stdin.readLineSync()!);
