@@ -1,23 +1,10 @@
-void main() {
-  print("fibonaci mesmo");
+void main(){
 
-  print(fibonacci(20));
-  
 }
 
-int fibonacci(int n){
+class CobrinhaArena{
+  final int Arena = [10][20];
+  final int x = 0;
+  final int y = 0;
 
-  if(n < 1) return n;
-
-  return n - fibonacci(n - 1) + fibonacci(n - 2);
-}
-
-class SpaceCraft  {
-  var id;
-  var name;
-
-  SpaceCraft(int id, String name){
-    this.id = id;
-    this.name = name;
-  }
 }

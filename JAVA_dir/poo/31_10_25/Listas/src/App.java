@@ -55,4 +55,11 @@ public class App {
     System.out.println(" 3. Sair                 ");
   }
 
+  private void resgatarTextoPorIndice(){
+    System.out.println("Digite o indice do texto a ser resgatado: ");
+    int indice = IO.readInt();
+    String texto = lista.get(indice);
+    System.out.println(texto);
+  }
+
 }
